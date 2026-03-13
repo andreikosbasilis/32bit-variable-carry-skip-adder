@@ -1,98 +1,98 @@
-# 32-bit Parametric Carry-Skip Adder (VHDL) \& Synthesis Analysis
+# 32-bit Parametric Carry-Skip Adder (VHDL) & Synthesis Analysis
 
 
 
 ## Project Overview
 
-This project explores the design space of a \*\*32-bit Carry-Skip Adder\*\* (CSA) using VHDL. The goal was to implement a <ins>parametric design</ins> allowing for variable block sizes of the grouped propagate logic (e.g., 8 blocks of 4 bits, 4 blocks of 8 bits) and analyze the impact on Critical Path Delay and Area.
+This project explores the design space of a **32-bit Carry-Skip Adder** (CSA) using VHDL. The goal was to implement a <ins>parametric design</ins> allowing for variable block sizes of the grouped propagate logic (e.g., 8 blocks of 4 bits, 4 blocks of 8 bits) and analyze the impact on Critical Path Delay and Area.
 
 
 
-\*\*Key Tools Used:\*\*
+**Key Tools Used:**
 
-\* \*\*RTL Design:\*\* VHDL
+* **RTL Design:** VHDL
 
-\* \*\*Synthesis:\*\* Cadence Genus (45nm \& 7nm libraries)
+* **Synthesis:** Cadence Genus (45nm & 7nm libraries)
 
-\* \*\*Physical Implementation:\*\* Cadence Innovus
+* **Physical Implementation:** Cadence Innovus
 
-\* \*\*Verification:\*\* Mentor Graphics ModelSim \& Cadence LEC (Logic Equivalence Check)
+* **Verification:** Mentor Graphics ModelSim & Cadence LEC (Logic Equivalence Check)
 
 
 
-\## Architecture
+## Architecture
 
 The design utilizes a `generic` based VHDL architecture to dynamically generate skip-logic blocks based on user parameters.
 
 
 
-!\[CSA Architecture](./img/csa\_diagram.png)
+![CSA Architecture](./img/csa_diagram.png)
 
 
 
-\## Key Engineering Insight: Tool Optimization
+## Key Engineering Insight: Tool Optimization
 
 We implemented multiple configurations to find the optimal block sizing for delay minimization:
 
-\* 1 block of 32 bits (Standard Ripple Carry Adder)
+* 1 block of 32 bits (Standard Ripple Carry Adder)
 
-\* 2 blocks of 16 bits
+* 2 blocks of 16 bits
 
-\* 4 blocks of 8 bits
+* 4 blocks of 8 bits
 
-\* 8 blocks of 4 bits
+* 8 blocks of 4 bits
 
-\* 16 blocks of 2 bits
+* 16 blocks of 2 bits
 
-\* 32 blocks of 1 bit
-
-
-
-\*\*Finding:\*\* Detailed analysis using \*\*Cadence Genus\*\* revealed that modern synthesis tools perform aggressive logic restructuring. Except for the baseline RCA, \*\*all grouped configurations resulted in identical netlists\*\* regarding PPA (Power, Performance, Area).
+* 32 blocks of 1 bit
 
 
 
-This demonstrates that for standard arithmetic architectures, the synthesis tool's optimization algorithms (boundary optimization \& retiming) often override manual RTL grouping strategies at the standard cell level.
+**Finding:** Detailed analysis using **Cadence Genus** revealed that modern synthesis tools perform aggressive logic restructuring. Except for the baseline RCA, **all grouped configurations resulted in identical netlists** regarding PPA (Power, Performance, Area).
 
 
 
-\## Implementation Results (Genus 45nm)
+This demonstrates that for standard arithmetic architectures, the synthesis tool's optimization algorithms (boundary optimization & retiming) often override manual RTL grouping strategies at the standard cell level.
 
 
 
-\### 1. Schematic View
+## Implementation Results (Genus 45nm)
+
+
+
+### 1. Schematic View
 
 Synthesized netlist visualization showing the complexity of the skip logic of the standard RCA
 
 
 
-!\[Synthesized Schematic](./img/gui.png)
+![Synthesized Schematic](./img/gui.png)
 
 
 
-\### 2. Physical Implementation (Innovus)
+### 2. Physical Implementation (Innovus)
 
 Post-route analysis confirmed the timing closure and power consumption.
 
 
 
-!\[Area report](./img/inn\_area.png)
+![Area report](./img/inn_area.png)
 
-!\[Power Report](./img/inn\_power.png)
+![Power Report](./img/inn_power.png)
 
-!\[Timing Report](./img/innovus\_timing.png)
-
-
-
-\### 3. Formal Verification (LEC)
-
-To ensure the synthesis optimizations did not alter the functionality, we performed \*\*Logic Equivalence Checking (LEC)\*\* between the RTL and the Synthesized Netlist.
+![Timing Report](./img/innovus_timing.png)
 
 
 
-\*\*Result: PASS\*\*
+### 3. Formal Verification (LEC)
+
+To ensure the synthesis optimizations did not alter the functionality, we performed **Logic Equivalence Checking (LEC)** between the RTL and the Synthesized Netlist.
 
 
 
-!\[LEC Report](./img/lec.png)
+**Result: PASS**
+
+
+
+![LEC Report](./img/lec.png)
 
