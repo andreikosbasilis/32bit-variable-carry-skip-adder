@@ -1,8 +1,8 @@
-\# 32-bit Parametric Carry-Skip Adder (VHDL) \& Synthesis Analysis
+# 32-bit Parametric Carry-Skip Adder (VHDL) \& Synthesis Analysis
 
 
 
-\## Project Overview
+## Project Overview
 
 This project explores the design space of a \*\*32-bit Carry-Skip Adder\*\* (CSA) using VHDL. The goal was to implement a <ins>parametric design</ins> allowing for variable block sizes of the grouped propagate logic (e.g., 8 blocks of 4 bits, 4 blocks of 8 bits) and analyze the impact on Critical Path Delay and Area.
 
