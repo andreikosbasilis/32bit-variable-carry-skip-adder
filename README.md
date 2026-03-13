@@ -75,13 +75,13 @@ Synthesized netlist visualization showing the complexity of the skip logic of th
 Post-route analysis confirmed the timing closure and power consumption.
 
 
-### Area Report
+  ### Area Report
 ![Area report](./img/inn_area.PNG)
 
-### Power Report
+  ### Power Report
 ![Power Report](./img/inn_power.PNG)
 
-### Timing Report
+  ### Timing Report
 ![Timing Report](./img/innovus_timing.PNG)
 
 
