@@ -66,7 +66,7 @@ Synthesized netlist visualization showing the complexity of the skip logic of th
 
 
 
-![Synthesized Schematic](./img/gui.png)
+![Synthesized Schematic](./img/gui.PNG)
 
 
 
@@ -76,11 +76,11 @@ Post-route analysis confirmed the timing closure and power consumption.
 
 
 
-![Area report](./img/inn_area.png)
+![Area report](./img/inn_area.PNG)
 
-![Power Report](./img/inn_power.png)
+![Power Report](./img/inn_power.PNG)
 
-![Timing Report](./img/innovus_timing.png)
+![Timing Report](./img/innovus_timing.PNG)
 
 
 
@@ -94,5 +94,5 @@ To ensure the synthesis optimizations did not alter the functionality, we perfor
 
 
 
-![LEC Report](./img/lec.png)
+![LEC Report](./img/lec.PNG)
 
