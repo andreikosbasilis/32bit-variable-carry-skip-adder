@@ -1,6 +1,6 @@
 # 32-bit Parametric Carry-Skip Adder (VHDL) & Synthesis Analysis
 
-
+This project was developed collaboratively with my colleague Marianna Aisopou as part of our academic coursework. We divided the design modules and integrated the final datapath and control logic.
 
 ## Project Overview
 
